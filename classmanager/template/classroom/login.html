@@ -1,0 +1,109 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+        height: 89vh; /* Full height */
+        width: 100%;
+        position: relative;
+        margin: 0;
+    }
+
+    .login-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+        padding: 1rem; /* Reduce padding */
+        border-radius: 0.5rem;
+        max-width: 400px;
+        height:fit-content;
+        width: 100%;
+        color: white; /* Set text color to white for better contrast */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow for better appearance */
+    }
+
+    .login-form h1 {
+        margin-bottom: 0.5rem; /* Reduce margin */
+    }
+
+    .login-form p {
+        margin-bottom: 0.5rem; /* Reduce margin */
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        width: 100%;
+        padding: 0.5rem; /* Reduce padding */
+        margin-bottom: 0.5rem; /* Reduce margin */
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        color: #495057;
+        background: #fff; /* White background for inputs */
+    }
+
+    .login-form input[type="submit"] {
+        width: 100%;
+        padding: 0.5rem; /* Reduce padding */
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .login-form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .login-form .avatar img {
+        width: 80px; /* Adjust size */
+        height: 80px; /* Adjust size */
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .login-form a {
+        color: #007bff;
+    }
+
+    .login-form a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container-fluid p-0">
+    <div class="bg-cover" style="background-image: url('{% static 'images/login-background.PNG' %}');">
+        <div class="login-form text-center">
+            {% if messages %}
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+                {% endfor %}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div> 
+            {% endif %}
+            <h1>Login</h1>
+            <form action="{% url 'classroom:login' %}" method="post">
+                {% csrf_token %}
+                <p>Username:</p>
+                <input type="text" name="username" placeholder="Enter your username">
+                <p>Password:</p>
+                <input type="password" name="password" placeholder="Enter password">
+                <input class="btn btn-primary" type="submit" value="Login">
+            </form>
+            <a href="{% url 'classroom:signup' %}">Don't have an account?</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'classroom/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Full height */
+        width: 100%;
+        position: relative;
+    }
+
+    .signup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+        padding: 2rem;
+        border-radius: 0.5rem;
+    }
+</style>
+
+<div class="container-fluid p-0">
+    <div class="bg-cover" style="background-image: url('{% static 'images/login-background.PNG' %}');">
+        <div class="signup text-center">
+            <h1>Sign Up</h1>
+            <br>
+            <a href="{% url 'classroom:StudentSignUp' %}" class="btn btn-primary btn-lg btn-block my-2">I'm a Student</a>
+            <a href="{% url 'classroom:TeacherSignUp' %}" class="btn btn-secondary btn-lg btn-block my-2">I'm a Teacher</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
