@@ -180,6 +180,3 @@ Class Manager uses the multi-user concept of Django where student and teacher ar
 
 This Classroom Management System demonstrates advanced Django concepts including custom user models, file handling, real-time features, and comprehensive CRUD operations, making it an excellent project for learning full-stack web development.
 =======
-# classroom-management-system
-Django-based Classroom Management System with student-teacher portal features
->>>>>>> d3bbb82009e818b7980c4d31debefd461d986815
