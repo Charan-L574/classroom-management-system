@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Classroom Management System
 
 A comprehensive, full-stack classroom management system built with Django, Python, and modern web technologies. This application provides role-based access for students, teachers, and administrators to manage classroom activities efficiently.
@@ -214,3 +215,7 @@ Teacher can check submissions made by their students and can give them marks for
 Class Manager uses the multi-user concept of Django where student and teacher are different types of user and have different functionalities. Also adding features like notice, messages, assignment, adding students to the class etc. requires a lot of Django concepts. Projects like Class Manager is a great choice to practice your Django skills and test yourself.
 
 This Classroom Management System demonstrates advanced Django concepts including custom user models, file handling, real-time features, and comprehensive CRUD operations, making it an excellent project for learning full-stack web development.
+=======
+# classroom-management-system
+Django-based Classroom Management System with student-teacher portal features
+>>>>>>> d3bbb82009e818b7980c4d31debefd461d986815
